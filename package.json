@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/syang019/mongoose",
   "dependencies": {
+    "dotenv": "^1.2.0",
     "express": "^4.13.1",
     "mongoose": "^4.0.7"
   }
