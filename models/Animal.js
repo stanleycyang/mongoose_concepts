@@ -3,13 +3,16 @@ var mongoose = require('mongoose'),
 
 var animalSchema = new Schema({
   name: String,
-  type: String
+  type: String,
   // Secondary indexes here, defined at field level
-  /*tags: {*/
-    //type: [String],
-    //index: true
-  /*}*/
-});
+  tags: {
+    type: [String],
+    index: true
+  }
+}, {autoIndex: false});
+
+// Mongoose calls ensureIndex when starting up. This should be disabled in production since index creation can cause significant performance impact
+//animalSchema.set('autoIndex', false);
 
 // Defining instance methods to animal Schema
 animalSchema.methods.findSimilarTypes = function(callback){

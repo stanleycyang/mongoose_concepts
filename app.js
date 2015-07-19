@@ -2,10 +2,14 @@ require('dotenv').load();
 var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 // Connect to db according to current operating environment
 var db = require('./db/config');
 var port = 3000;
 var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Source in routes
 var index = require('./routes/index');

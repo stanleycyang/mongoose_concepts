@@ -32,12 +32,26 @@ router.get('/dogs', function(request, response, next){
 
 // Post new dogs
 router.post('/', function(request, response, next){
+  // Create the animal object with the Schema
+  var animal = new Animal({
+    name: request.body.name,
+    type: request.body.type
+  });
 
+  // Save the animal into the DB
+  animal.save(function(error){
+    if(error) return response.json({success: false, message: 'failed'});
+    response.json({
+      success: true,
+      message: 'Animal created!'
+    });
+  });
 });
 
 // Use the class method to find animal by name
-router.post('/', function(request, response, next){
-  Animal.findByName('Bob', function(error, animals){
+router.post('/findByName', function(request, response, next){
+  var name = request.body.name;
+  Animal.findByName(name, function(error, animals){
     if(error) response.send(error);
     response.send(animals);
   });
