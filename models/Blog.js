@@ -46,5 +46,7 @@ var blogSchema = new Schema({
   }
 });
 
+
+
 // creates a model to be exported
 module.export = mongoose.model('Blog', blogSchema);

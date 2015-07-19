@@ -7,13 +7,16 @@ var db = require('./db/config');
 var port = 3000;
 var app = express();
 
-// Source in models
-var Blog = require('./models/Blog');
+// Source in routes
+var index = require('./routes/index');
+var AnimalRoutes = require('./routes/AnimalRoutes');
+var BlogRoutes = require('./routes/BlogRoutes');
 
 // Set up routing
-app.get('/', function(request, response){
-  response.send('Hello World!');
-});
+app.use('/', index);
+app.use('/api/blogs', BlogRoutes);
+app.use('/api/animals', AnimalRoutes);
+
 
 // Set up node server
 var server = http.createServer(app);
