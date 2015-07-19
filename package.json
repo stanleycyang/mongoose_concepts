@@ -1,0 +1,26 @@
+{
+  "name": "working_mongoose",
+  "version": "1.0.0",
+  "description": "All practical uses of mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syang019/mongoose.git"
+  },
+  "keywords": [
+    "mongoose"
+  ],
+  "author": "Stanley C Yang <stanley@stanleycyang.com> (http://www.stanleycyang.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syang019/mongoose/issues"
+  },
+  "homepage": "https://github.com/syang019/mongoose",
+  "dependencies": {
+    "express": "^4.13.1",
+    "mongoose": "^4.0.7"
+  }
+}
