@@ -3,11 +3,13 @@ var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var logger = require('morgan');
 // Connect to db according to current operating environment
 var db = require('./db/config');
 var port = 3000;
 var app = express();
 
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -15,11 +17,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 var index = require('./routes/index');
 var AnimalRoutes = require('./routes/AnimalRoutes');
 var BlogRoutes = require('./routes/BlogRoutes');
+var ThingRoutes = require('./routes/ThingRoutes');
 
 // Set up routing
 app.use('/', index);
 app.use('/api/blogs', BlogRoutes);
 app.use('/api/animals', AnimalRoutes);
+app.use('/api/things', ThingRoutes);
 
 
 // Set up node server

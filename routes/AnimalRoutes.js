@@ -57,4 +57,12 @@ router.post('/findByName', function(request, response, next){
   });
 });
 
+// Use the instance method to find all Sallys
+router.post('/findBySimilarNames', function(request, response, next){
+  dog.findSimilarNames(function(error, animals){
+    if(error) return response.send({success: false, message: 'try again'});
+    response.send(animals);
+  });
+});
+
 module.exports = router;

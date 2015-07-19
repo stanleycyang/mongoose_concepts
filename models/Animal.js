@@ -11,6 +11,9 @@ var animalSchema = new Schema({
   }
 }, {autoIndex: false});
 
+// Turns documents to JSONs
+animalSchema.set('toJSON', {getters: true, virtuals: true});
+
 // Mongoose calls ensureIndex when starting up. This should be disabled in production since index creation can cause significant performance impact
 //animalSchema.set('autoIndex', false);
 
