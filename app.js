@@ -18,12 +18,14 @@ var index = require('./routes/index');
 var AnimalRoutes = require('./routes/AnimalRoutes');
 var BlogRoutes = require('./routes/BlogRoutes');
 var ThingRoutes = require('./routes/ThingRoutes');
+var TankRoutes = require('./routes/TankRoutes');
 
 // Set up routing
 app.use('/', index);
 app.use('/api/blogs', BlogRoutes);
 app.use('/api/animals', AnimalRoutes);
 app.use('/api/things', ThingRoutes);
+app.use('/api/tanks', TankRoutes);
 
 
 // Set up node server
