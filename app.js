@@ -21,6 +21,7 @@ var ThingRoutes = require('./routes/ThingRoutes');
 var TankRoutes = require('./routes/TankRoutes');
 var SubRoutes = require('./routes/SubRoutes');
 var CarRoutes = require('./routes/CarRoutes');
+var ToyRoutes = require('./routes/ToyRoutes');
 
 // Set up routing
 app.use('/', index);
@@ -30,6 +31,7 @@ app.use('/api/things', ThingRoutes);
 app.use('/api/tanks', TankRoutes);
 app.use('/api/subs', SubRoutes);
 app.use('/api/cars', CarRoutes);
+app.use('/api/toys', ToyRoutes);
 
 
 // Set up node server
